@@ -9,8 +9,9 @@ from oauth2client.client import OAuth2WebServerFlow
 
 
 # Copy your credentials from the APIs Console
-CLIENT_ID = 'YOUR_CLIENT_ID'
-CLIENT_SECRET = 'YOUR_CLIENT_SECRET'
+CLIENT_ID = '659498809683.apps.googleusercontent.com'
+CLIENT_SECRET = 'U3JqquefakvkQssD--3C0gnl'
+REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
 
 # Check https://developers.google.com/drive/scopes for all available scopes
 OAUTH_SCOPE = 'https://www.googleapis.com/auth/drive'
@@ -19,7 +20,7 @@ OAUTH_SCOPE = 'https://www.googleapis.com/auth/drive'
 FILENAME = 'document.txt'
 
 # Run through the OAuth flow and retrieve credentials
-flow = OAuth2WebServerFlow(CLIENT_ID, CLIENT_SECRET, OAUTH_SCOPE)
+flow = OAuth2WebServerFlow(CLIENT_ID, CLIENT_SECRET, OAUTH_SCOPE, REDIRECT_URI)
 authorize_url = flow.step1_get_authorize_url()
 print 'Go to the following link in your browser: ' + authorize_url
 code = raw_input('Enter verification code: ').strip()
